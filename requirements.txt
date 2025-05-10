@@ -6,3 +6,4 @@ python-dotenv==1.0.0
 PyMySQL==1.1.1
 SQLAlchemy==2.0.40
 cryptography==36.0.2
+gunicorn==21.2.0
