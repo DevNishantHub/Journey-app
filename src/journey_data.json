@@ -1,0 +1,224 @@
+{
+  "title": "DevOps Learning Roadmap",
+  "summary": "This roadmap starts May 11, 2025 and covers core DevOps skills through August 11, 2025 (3 months), followed by an extended plan up to one year. It assumes 3\u202fhours/day May\u202f11\u2013June\u202f16 and 8\u202fhours/day June\u202f17\u2013Aug\u202f11. Key areas include Linux, containers (Docker), orchestration (Kubernetes), CI/CD (Jenkins, GitHub Actions), IaC (Terraform), configuration management (Ansible), cloud (AWS/Azure/GCP), monitoring (Prometheus/Grafana), logging (ELK), and DevOps security. Each week combines learning and hands-on practice. The schedule is outlined below:",
+  "phases": [
+    {
+      "name": "Phase 1: Foundational Skills (3h/day)",
+      "dates_raw": "May 11 \u2013 June 16, 2025",
+      "weeks": [
+        {
+          "week_number_in_phase": 1,
+          "dates": "May 11\u201317, 2025",
+          "focus": "Linux, Bash, Vim",
+          "description": "Learn core Linux concepts and command-line tools. Linux underpins most DevOps environments due to its stability, security, flexibility, and scalability. Spend this week mastering basic commands and shells. Practice navigation (ls, cd), file operations (cp, mv, chmod, chown), text processing (grep, sed, awk), and process monitoring (ps, top). Write simple Bash scripts for automation (e.g. backup scripts). Learn a text editor (Vim or Nano) for editing config/code. By week\u2019s end you should be comfortable using the Linux terminal and writing basic scripts.",
+          "tasks": [
+            "Setup & Installation: Install a Linux distro (e.g. Ubuntu) on a VM, use WSL, or cloud shell.",
+            "Command Practice: Use tutorials or a cheat sheet to practice ls, cd, mkdir, cat, vim, etc.",
+            "Scripting: Write small Bash scripts (e.g. a script to archive log files, or check disk usage).",
+            "Vim Basics: Learn Vim modes, saving files, search/replace. For example, edit config files and write documentation in Vim.",
+            "Read/Watch: Follow an online guide like \u201cLinux command line\u201d references or the Medium article on Linux for DevOps to reinforce concepts."
+          ]
+        },
+        {
+          "week_number_in_phase": 2,
+          "dates": "May 18\u201324, 2025",
+          "focus": "Git & Shell Scripting",
+          "description": "Version control is fundamental in DevOps. Git is a free SCM tool used to track code changes and enable collaboration. Spend this week learning Git and improving scripting skills. Key topics: creating repositories, cloning, committing, branching, merging, and pushing to GitHub or GitLab. Also learn basic shell scripting (e.g. writing Python or Bash scripts to automate tasks).",
+          "tasks": [
+            "Git Basics: Initialize a repo, commit changes, create/merge branches. Practice using git log, git diff, and resolving merge conflicts.",
+            "GitHub/GitLab: Create an account on GitHub (or GitLab) and push your repo online. Experiment with pull requests and reviewing code.",
+            "Automation Scripting: Write a script (Python or Bash) to automate a routine task (e.g. a script to parse a log file or manage a directory of files).",
+            "CLI Tools: Learn ssh and scp to remotely access servers. Explore using curl or httpie for testing APIs.",
+            "Resources: Use free Git tutorials (Atlassian, Git Immersion) and shell script examples to guide practice."
+          ]
+        },
+        {
+          "week_number_in_phase": 3,
+          "dates": "May 25\u201331, 2025",
+          "focus": "Docker Containers Basics",
+          "description": "Learn Docker containerization. Docker lets developers package applications into lightweight, portable containers. Containers isolate the app and its dependencies, enabling consistent deployment across environments. Spend this week building Docker images and running containers.",
+          "tasks": [
+            "Install Docker: Install Docker Engine and Docker Compose on your machine (or use Docker Desktop).",
+            "Build Images: Write a simple Dockerfile for an application (e.g. a Python or Node app). Use docker build to create an image.",
+            "Run Containers: Start containers with docker run, mapping ports and mounting volumes. Inspect logs (docker logs) and exec into containers.",
+            "Docker Compose: Use Docker Compose to run multi-container applications (e.g. a web app + database). Define services in a docker-compose.yml.",
+            "Registry: Push and pull images using Docker Hub. Learn docker tag and docker push.",
+            "Learn More: Follow Docker\u2019s official tutorial on \u201cWhat is Docker\u201d and practice with sample apps."
+          ]
+        },
+        {
+          "week_number_in_phase": 4,
+          "dates": "June 1\u20137, 2025",
+          "focus": "Kubernetes Basics",
+          "description": "Begin learning Kubernetes (K8s), the leading container orchestration system. Use Minikube or a local cluster to practice. Focus on core concepts: Pods, Deployments, Services, and the kubectl tool.",
+          "tasks": [
+            "Setup: Install Minikube or Docker Desktop\u2019s K8s. Start a local cluster.",
+            "K8s Objects: Create a Deployment from a container image; scale replicas. Expose it via a Service (ClusterIP or NodePort).",
+            "kubectl: Practice commands like kubectl get, describe, logs, exec. View pod status and troubleshoot errors.",
+            "ConfigMaps/Secrets: Learn to inject configuration/environment variables into pods using ConfigMaps or Secrets.",
+            "Networking: Set up an Ingress or use port-forwarding to access apps.",
+            "Hands-On: Deploy a sample multi-tier app (e.g., a simple web app with backend). Follow Kubernetes documentation or tutorials (CNCF resources) for guidance."
+          ]
+        },
+        {
+          "week_number_in_phase": 5,
+          "dates": "June 8\u201316, 2025",
+          "focus": "CI/CD Introduction (Jenkins & GitHub Actions)",
+          "description": "Learn the basics of continuous integration and continuous delivery (CI/CD). Tools like Jenkins automate building, testing and deploying code whenever changes are made. For example, Jenkins can automatically run builds and tests on each commit. Similarly, GitHub Actions provides cloud-based pipelines.",
+          "tasks": [
+            "CI/CD Concepts: Read about CI/CD pipelines (DevOps guides). Understand stages: build, test, deploy.",
+            "Jenkins: Install Jenkins (local or cloud). Create a simple pipeline (Freestyle job) that builds code or runs tests on a repo push. Experiment with pipeline syntax.",
+            "GitHub Actions: In a GitHub repository, create a .github/workflows YAML to run a test script on each push. For example, run pytest or a linter.",
+            "Practice: Commit code to trigger the pipelines. Debug build failures.",
+            "Integrations: Configure notifications (email/slack) on build status.",
+            "Learn More: Use tutorials (e.g. Jenkins official getting started) to set up a basic build/test job."
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Phase 2: Intensive DevOps (8h/day)",
+      "dates_raw": "June 17 \u2013 Aug 11, 2025",
+      "weeks": [
+        {
+          "week_number_in_phase": 1,
+          "dates": "Jun 17\u201323, 2025",
+          "focus": "Docker & Compose Advanced",
+          "description": "Deepen your Docker skills with complex scenarios. Learn to manage multi-container applications and Docker networking.",
+          "tasks": [
+            "Multi-Container Apps: Expand on your Docker Compose setup: add a database (e.g. MySQL) or a caching layer. Manage environment variables securely.",
+            "Networking: Create custom networks for containers, link containers by service name, and test connectivity.",
+            "Dockerfiles: Optimize Dockerfiles (multi-stage builds for smaller images). Learn common instructions and best practices.",
+            "Docker Tools: Explore Docker CLI commands in depth (docker network, docker volume). Use docker inspect to understand container settings.",
+            "Hands-On: Convert a local multi-service project into Docker Compose (for example, an app written in Python or Node with a Redis or PostgreSQL service)."
+          ]
+        },
+        {
+          "week_number_in_phase": 2,
+          "dates": "Jun 24\u201330, 2025",
+          "focus": "Kubernetes Advanced",
+          "description": "Build on Kubernetes basics to handle real-world scenarios.",
+          "tasks": [
+            "Helm Charts: Install Helm (package manager for K8s). Use Helm to deploy an application (e.g. a WordPress chart) and customize values.",
+            "Persistent Storage: Set up a PersistentVolume (PV) and PersistentVolumeClaim (PVC) to give pods durable storage (e.g. for a database).",
+            "Autoscaling: Configure a Horizontal Pod Autoscaler (HPA) based on metrics (e.g. CPU or custom metrics).",
+            "Network Policies: Learn basic network policies to secure pod communication.",
+            "Role-Based Access: Set up simple RBAC rules and service accounts.",
+            "Cloud K8s: If possible, try a managed Kubernetes (AWS EKS, Azure AKS, GCP GKE free tier) to see the cloud experience.",
+            "Hands-On: Deploy a full-stack app with Helm, test scaling, and simulate failures (e.g. kill pods) to see recovery."
+          ]
+        },
+        {
+          "week_number_in_phase": 3,
+          "dates": "Jul 1\u20137, 2025",
+          "focus": "CI/CD with Jenkins (Pipelines)",
+          "description": "Focus on building robust pipelines using Jenkins.",
+          "tasks": [
+            "Jenkins Pipeline: Learn Declarative Pipelines (Jenkinsfile). Write a Jenkinsfile for your project that builds code, runs tests, and packages artifacts.",
+            "Integration: Integrate Jenkins with GitHub or your Git server via webhooks.",
+            "Container Builds: Configure Jenkins to build Docker images and push to a registry (Docker Hub or AWS ECR).",
+            "Visualization: Use the Build Pipeline or Blue Ocean plugin for better visualization of pipelines.",
+            "Agents: Experiment with Jenkins agents (e.g., Docker agent templates).",
+            "Hands-On: Create a multi-stage pipeline for a sample app: e.g., Checkout \u2192 Build/Test \u2192 Docker Build/Push \u2192 Deploy to K8s."
+          ]
+        },
+        {
+          "week_number_in_phase": 4,
+          "dates": "Jul 8\u201314, 2025",
+          "focus": "CI/CD with GitHub Actions & GitOps",
+          "description": "Learn cloud-native pipelines and GitOps practices.",
+          "tasks": [
+            "GitHub Actions: Write advanced workflows (e.g., matrix builds, artifacts). Trigger deployments to test environments.",
+            "GitOps with Argo CD: Install Argo CD on your Kubernetes cluster. Use the GitOps pattern: store K8s manifests in a Git repo and have Argo CD synchronize them to the cluster. Argo CD \u201cfollows the GitOps pattern of using Git repositories as the source of truth for defining the desired application state\u201d.",
+            "Flux (optional): Explore Flux as an alternative GitOps tool.",
+            "Hands-On: Push a change to Kubernetes YAML in Git and observe Argo CD automatically apply it. Test rollback by reverting a commit.",
+            "Learn More: Use Argo CD\u2019s documentation for quickstart and try the official \u201cHello World\u201d example."
+          ]
+        },
+        {
+          "week_number_in_phase": 5,
+          "dates": "Jul 15\u201321, 2025",
+          "focus": "Infrastructure as Code with Terraform",
+          "description": "Learn Terraform and cloud provisioning. Terraform \u201clets you build, change, and version infrastructure safely and efficiently\u201d.",
+          "tasks": [
+            "Cloud Setup: Choose one cloud (AWS is recommended, as it holds about a third of the market). Create a free-tier account. Install and configure the AWS CLI with your credentials.",
+            "Terraform Basics: Install Terraform. Write HCL configurations to provision simple infrastructure: e.g., an AWS VPC, EC2 instance, and an S3 bucket.",
+            "Modules & State: Use Terraform modules for reusable components. Configure remote state (e.g. S3 backend) and locking (DynamoDB for AWS).",
+            "Practice Changes: Use terraform plan and terraform apply to make incremental changes (e.g. scale up an instance count). Learn terraform destroy to tear down resources safely.",
+            "Multi-Cloud (optional): If time permits, try the same setup on a second cloud (Azure or GCP).",
+            "Hands-On: Provision a small web service on AWS with Terraform, then update it (e.g. add a database or load balancer)."
+          ]
+        },
+        {
+          "week_number_in_phase": 6,
+          "dates": "Jul 22\u201328, 2025",
+          "focus": "Configuration Management with Ansible",
+          "description": "Learn Ansible for automated configuration. Ansible is an open-source, agentless automation tool \u201cthat has become the de facto standard for configuration management\u201d.",
+          "tasks": [
+            "Ansible Setup: Install Ansible on a control machine (your laptop/VM). Prepare a couple of target nodes (could be local VMs or cloud VMs).",
+            "Inventory & Playbooks: Create an inventory file of your hosts. Write playbooks to perform tasks: e.g., install and configure Nginx on all hosts, deploy application code, manage users.",
+            "Idempotency: Practice that running a playbook twice doesn\u2019t reapply changes (check Ansible\u2019s idempotency).",
+            "Roles: Organize playbooks into roles for reuse. Use Ansible Galaxy to find existing roles (e.g. a role to install Docker or PostgreSQL).",
+            "Hands-On: Write a playbook that ensures a cluster of servers has the correct packages, services enabled, and users created. Test by deliberately changing state and rerunning the playbook."
+          ]
+        },
+        {
+          "week_number_in_phase": 7,
+          "dates": "Jul 29\u2013Aug 4, 2025",
+          "focus": "Monitoring (Prometheus & Grafana)",
+          "description": "Set up observability. Prometheus is a cloud-native monitoring and alerting toolkit, and Grafana is \u201cthe leading open source visualization and dashboarding platform\u201d.",
+          "tasks": [
+            "Prometheus: Install Prometheus server. Learn how it scrapes metrics (use Node Exporter for host metrics, or python_client for app metrics). Configure prometheus.yml with scrape targets.",
+            "Grafana: Install Grafana and connect it to Prometheus. Build dashboards (e.g., CPU/RAM charts, HTTP request metrics).",
+            "Alerting: Configure Prometheus Alertmanager to send alerts (e.g. email or Slack) on certain thresholds.",
+            "Logging (ELK) Prep: At a high level, plan how logs flow (ELK setup is next week).",
+            "Hands-On: Generate some load on your app and observe metrics; create an alert rule (e.g., page load latency > X). Explore community exporters (e.g. for Kubernetes, use kube-state-metrics)."
+          ]
+        },
+        {
+          "week_number_in_phase": 8,
+          "dates": "Aug 5\u201311, 2025",
+          "focus": "Logging (ELK Stack) & DevOps Security",
+          "description": "Logging: Learn the ELK stack (Elasticsearch, Logstash, Kibana). The ELK Stack became \u201cthe most popular log management and analytics solution in the world\u201d. Set up ELK or OpenSearch to centralize logs from your servers/apps.",
+          "tasks": [
+            "ELK Setup: Install Elasticsearch, Logstash, and Kibana (or use Elastic Cloud trial). Configure Filebeat or Fluentd on your hosts to ship logs to ELK.",
+            "Visualization: Use Kibana to search and visualize logs (e.g., web server access logs, system logs). Create dashboards (requests per second, error rates).",
+            "Hands-On: Tail an application log and watch it appear in Kibana. Test filtering and alert on log patterns (e.g. spike in errors). DevOps Security: Introduce DevSecOps concepts. High-profile supply-chain attacks have shown that \u201csecurity is becoming a top priority\u201d in DevOps pipelines. The goal is to \u201cweave security into the DevOps pipeline\u201d (DevSecOps).",
+            "Container/Image Scanning: Use tools like Trivy or Clair to scan Docker images for vulnerabilities. Incorporate scanning into your CI pipeline.",
+            "Static Code Analysis: Set up a SAST tool (e.g. SonarQube or GitHub advanced security) to analyze code quality/security during builds.",
+            "Secrets Management: Explore secrets storage (HashiCorp Vault or AWS Secrets Manager). Practice storing and accessing secrets securely (never hard-code credentials).",
+            "Infrastructure Security: Review IAM and networking (security groups/VPC rules) in your cloud. Apply least-privilege principles.",
+            "Hands-On: Simulate a secret leak and rotate credentials. Trigger your pipeline with a vulnerable container image and fix the issue. Follow security checklists (e.g. CIS benchmarks) to audit your systems."
+          ]
+        }
+      ]
+    }
+  ],
+  "ongoing_learning": {
+    "title": "Phase 3: Ongoing Advanced Learning (3h/day)",
+    "duration_overall": "Aug 12, 2025 \u2013 May 10, 2026",
+    "description": "After the intensive 3-month core training, continue deepening skills over the next ~9 months (3h/day). Focus on advanced topics, projects, and certifications. Here\u2019s a high-level plan:",
+    "periods": [
+      {
+        "period_label": "Aug\u2013Oct 2025",
+        "dates": "Aug 12\u2013Oct 31, 2025",
+        "focus": "Multi-cloud, advanced Kubernetes (service mesh), security"
+      },
+      {
+        "period_label": "Nov\u2013Dec 2025",
+        "dates": "Nov 1\u2013Dec 31, 2025",
+        "focus": "GitOps (Argo CD), serverless, networking"
+      },
+      {
+        "period_label": "Jan\u2013Mar 2026",
+        "dates": "Jan 1\u2013Mar 31, 2026",
+        "focus": "SRE practices (SLA/SLO, chaos engineering), advanced observability"
+      },
+      {
+        "period_label": "Apr\u2013May 2026",
+        "dates": "Apr 1\u2013May 10, 2026",
+        "focus": "Capstone projects, certification prep, specialization"
+      }
+    ]
+  }
+}

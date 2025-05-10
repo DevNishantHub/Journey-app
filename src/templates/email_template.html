@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Daily DevOps Journey Reminder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        h1 {
+            color: #0056b3;
+            font-size: 1.5em;
+        }
+        h2 {
+            color: #117a8b;
+            font-size: 1.2em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hello! Here's your DevOps Journey reminder for today:</h1>
+        
+        {% if tasks_for_today %}
+            {% for item in tasks_for_today %}
+                <h2>{{ item.phase_name }} - {{ item.week_focus }}</h2>
+                <p><strong>Dates:</strong> {{ item.week_dates }}</p>
+                {% if item.tasks %}
+                    <p><strong>Today's Focus / Tasks:</strong></p>
+                    <ul>
+                        {% for task_detail in item.tasks %}
+                            <li>{{ task_detail }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No specific sub-tasks listed for today, focus on the week's main topic.</p>
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No specific tasks scheduled for today in your roadmap. Perhaps it's a good day to review past topics or explore something new!</p>
+        {% endif %}
+
+        <p class="footer">
+            Keep up the great work on your DevOps learning journey!<br>
+            This is an automated reminder from your Journey Tracker.
+        </p>
+    </div>
+</body>
+</html>

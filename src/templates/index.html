@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DevOps Journey</title>
+    <link rel="stylesheet" href="{{ url_for("static", filename="css/style.css") }}">
+</head>
+<body>
+    <header>
+        <h1>{{ journey.title }}</h1>
+        <p>{{ journey.summary }}</p>
+    </header>
+
+    <div id="threejs-container"></div>
+
+    <main>
+        <h2>Journey Phases</h2>
+        {% for phase in journey.phases %}
+        <section class="phase">
+            <h3>{{ phase.name }}</h3>
+            <p class="phase-dates">({{ phase.dates_raw }})</p>
+            {% for week in phase.weeks %}
+            <article class="week">
+                <h4>Week {{ week.week_number_in_phase }}: {{ week.focus }}</h4>
+                <p class="week-dates"><em>{{ week.dates }}</em></p>
+                <p class="week-description">{{ week.description }}</p>
+                {% if week.tasks %}
+                <h5>Key Tasks & Activities:</h5>
+                <ul>
+                    {% for task in week.tasks %}
+                    <li>{{ task }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </section>
+        {% endfor %}
+
+        {% if journey.ongoing_learning and journey.ongoing_learning.title %}
+        <section class="phase ongoing-learning">
+            <h3>{{ journey.ongoing_learning.title }}</h3>
+            <p class="phase-dates">({{ journey.ongoing_learning.duration_overall }})</p>
+            <p>{{ journey.ongoing_learning.description }}</p>
+            {% if journey.ongoing_learning.periods %}
+            <h4>Focus Periods:</h4>
+            <ul>
+                {% for period in journey.ongoing_learning.periods %}
+                <li><strong>{{ period.period_label }} ({{ period.dates }}):</strong> {{ period.focus }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </section>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>Journey Tracker - Keep Learning!</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{{ url_for("static", filename="js/three_visualization.js") }}"></script>
+    <script src="{{ url_for("static", filename="js/main_app.js") }}"></script>
+</body>
+</html>
