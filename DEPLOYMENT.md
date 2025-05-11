@@ -17,13 +17,22 @@ cd f:\Programming\Vibecoding\journey_app
 start_server.bat
 ```
 
+### Running the Background Worker
+```pwsh
+cd f:\Programming\Vibecoding\journey_app
+# PowerShell
+.\run_worker.ps1
+# OR Command Prompt
+run_worker.bat
+```
+
 ## Deployment to Render.com
 
 ### Prerequisites
 1. Push your code to a Git repository (GitHub, GitLab, etc.)
 2. Create an account on [Render.com](https://render.com)
 
-### Deployment Steps
+### Web Service Deployment
 1. In Render dashboard, click "New" and select "Web Service"
 2. Connect your Git repository
 3. Configure the service:
@@ -31,6 +40,16 @@ start_server.bat
    - **Runtime**: Python
    - **Build Command**: `pip install -r requirements.txt`
    - **Start Command**: `gunicorn app:app`
+   - **Python Version**: 3.11
+
+### Background Worker Deployment
+1. In Render dashboard, click "New" and select "Background Worker"
+2. Connect your Git repository
+3. Configure the service:
+   - **Name**: devops-journey-worker (or your preferred name)
+   - **Runtime**: Python
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `python worker.py`
    - **Python Version**: 3.11
 
 ### Environment Variables

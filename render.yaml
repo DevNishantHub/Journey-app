@@ -7,3 +7,12 @@ services:
     envVars:
       - key: PYTHON_VERSION
         value: 3.11
+  
+  - type: worker
+    name: devops-journey-worker
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python worker.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11

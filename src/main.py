@@ -269,8 +269,8 @@ def configure_scheduler():
     scheduler.add_job(id='send_daily_reminder', 
                      func=send_daily_reminder, 
                      trigger='cron', 
-                     hour=8, 
-                     minute=00)
+                     hour=9, 
+                     minute=15)
     scheduler.start()
     
     logger.info(f"Scheduler started. Daily reminders will be sent at 8:00 AM to {RECEIVER_EMAIL}")
